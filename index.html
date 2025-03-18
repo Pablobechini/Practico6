@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afiliación al Gym</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos-retro.css">
+    <style>
+    body{font-family: 'Poppins', sans-serif;
+        margin: 20px;
+        }
+        
+        fieldset {
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        legend {
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+        }
+        .form-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 5px;
+        }
+        .form-group label {
+            flex: none;
+            margin-right: 5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            flex: none;
+            width: 80px;
+            padding: 2px;
+            margin: 0;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        .radio-group label, .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .terms-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vení al Gym! 💪</h1>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>🙋🏼‍♂Datos Personales👀</legend>
+            <div class="form-group">
+                <label for="nombre">Nombre:* </label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido:* </label>
+                <input type="text" id="apellido" name="apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="documento">Documento:* </label>
+                <input type="text" id="documento" name="documento" required>
+            </div>
+            <div class="form-group">
+                <label for="nacionalidad">Nacionalidad:*</label>
+                <select id="nacionalidad" name="nacionalidad" required>
+                    <option value="">Seleccionar</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="brasil">Brasil</option>
+                    <option value="uruguay">Uruguay</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comentario">Contanos un poco de vos...</label>
+                <textarea id="comentario" name="comentario" rows="2"></textarea>
+            </div>
+            <label>Sexo:* </label>
+            <div class="radio-group">
+                <label><input type="radio" name="sexo" value="femenino" required> Femenino</label>
+                <label><input type="radio" name="sexo" value="masculino"> Masculino</label>
+                <label><input type="radio" name="sexo" value="otro"> Otro</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>📱Datos de Contacto💌</legend>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono">
+            </div>
+            <div class="form-group">
+                <label for="email"> Direción de correo electronico:* </label>
+                <input type="email" id="email" name="email" required>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>🚴Actividades🤸</legend>
+            <p>Indica cuáles actividades te interesan.</p>
+            <p>Sede Palermo:</p>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="actividad" value="basquet"> Básquet</label>
+                <label><input type="checkbox" name="actividad" value="boxeo"> Boxeo</label>
+                <label><input type="checkbox" name="actividad" value="futbol"> Fútbol</label>
+                <label><input type="checkbox" name="actividad" value="tenis"> Tenis</label>
+            </div>
+            <p>Sede Rosario:</p>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="actividad" value="basquet_rosario"> Básquet</label>
+                <label><input type="checkbox" name="actividad" value="futbol_rosario"> Fútbol</label>
+                <label><input type="checkbox" name="actividad" value="rugby"> Rugby</label>
+                <label><input type="checkbox" name="actividad" value="voley"> Voley</label>
+            </div>
+        </fieldset>
+
+        <div class="terms-group">
+            <label><input type="checkbox" name="condiciones" required> Acepto las condiciones *</label>
+            <label><input type="checkbox" name="novedades"> Deseo recibir novedades</label>
+        </div>
+        <p>*:campos obligatorios</p>
+        <br>
+        <button type="submit">Iniciar afiliación</button>
+        <button type="reset">Restablecer</button>
+    </form>
+</body>
+</html>
