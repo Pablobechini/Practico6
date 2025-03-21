@@ -5,34 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Afiliación al Gym</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilos-retro.css">
+    <link id="estilo" rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
-    body{font-family: 'Poppins', sans-serif;
-        margin: 20px;
-        }
         
-        fieldset {
-            border: 1px solid #ccc;
-            margin-bottom: 15px;
-            padding: 10px;
+        .botones {
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            gap: 1rem;
         }
+
+        .botones select{
+            width: fit-content;
+        }
+
+        #botonAleatorio {
+            max-width: 10%;
+            display:inline-flex;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #recordarEstilo {
+            cursor: pointer;
+        }
+
+        #recordarEstilo.hundido {
+            background-color: gray;
+            transform: scale(0.95);
+        }
+
+        #recordarEstilo:hover {
+            background-color: gray;
+        }
+
+        #botonAleatorio:hover {
+            transform: scale(1.05);
+            padding: 0;
+        }
+
         legend {
             font-weight: bold;
             font-family: 'Roboto', sans-serif;
         }
-        .form-group {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            margin-bottom: 5px;
-        }
+
         .form-group label {
             flex: none;
             margin-right: 5px;
         }
         .form-group input, .form-group select, .form-group textarea {
-            flex: none;
-            width: 80px;
             padding: 2px;
             margin: 0;
         }
@@ -55,9 +77,29 @@
     </style>
 </head>
 <body>
-    <h1>Vení al Gym! 💪</h1>
+    <section class="botones">
+        <button id="cambiarEstilo">Alternar</button>
+        <img id="botonAleatorio" src="fotos/dice.png" alt="Botón de diseño aleatorio" >
+        <button id="recordarEstilo">Recordar</button>
+        <select id="selectorEstilos">
+            <option value="">Sin estilo</option>
+            <option value="estilos.css">Estilo original</option>
+            <option value="estilos-urbano.css">Estilo urbano</option>
+            <option value="estilos-retro.css">Estilo retro</option>
+        </select>
+        <div id="radioEstilos">
+            <label><input type="radio" name="estilo" value=""> Sin estilos</label>
+            <label><input type="radio" name="estilo" value="estilos.css"> Estilo original</label>
+            <label><input type="radio" name="estilo" value="estilos-urbano.css"> Estilo urbano</label>
+            <label><input type="radio" name="estilo" value="estilos-retro.css"> Estilo retro</label>
+        </div>
+    </section>
+
+    <header>
+        <h1>Vení al Gym! 💪</h1>
+    </header>
     <form action="#" method="post">
-        <fieldset>
+        <fieldset id="D-personal" class="container">
             <legend>🙋🏼‍♂Datos Personales👀</legend>
             <div class="form-group">
                 <label for="nombre">Nombre:* </label>
@@ -91,20 +133,44 @@
                 <label><input type="radio" name="sexo" value="otro"> Otro</label>
             </div>
         </fieldset>
-
-        <fieldset>
+        <div class="separator">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <fieldset id="D-contacto" class="container">
             <legend>📱Datos de Contacto💌</legend>
             <div class="form-group">
                 <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono">
+                <input type="tel" id="telefono" name="telefono" placeholder="Código de área y número">
             </div>
             <div class="form-group">
                 <label for="email"> Direción de correo electronico:* </label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required placeholder="Ej: mail@gmail.com">
             </div>
         </fieldset>
-
-        <fieldset>
+        <div class="separator" class="container">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <fieldset id="actividades">
             <legend>🚴Actividades🤸</legend>
             <p>Indica cuáles actividades te interesan.</p>
             <p>Sede Palermo:</p>
@@ -124,13 +190,17 @@
         </fieldset>
 
         <div class="terms-group">
-            <label><input type="checkbox" name="condiciones" required> Acepto las condiciones *</label>
-            <label><input type="checkbox" name="novedades"> Deseo recibir novedades</label>
+            <label>Acepto las condiciones *<input type="checkbox" name="condiciones" required> </label>
+            <label>Deseo recibir novedades<input type="checkbox" name="novedades"> </label>
+            <p>*: campo obligatorio</p>
         </div>
-        <p>*:campos obligatorios</p>
         <br>
-        <button type="submit">Iniciar afiliación</button>
-        <button type="reset">Restablecer</button>
+        <div class="buttons">
+            <button type="submit">Iniciar afiliación</button>
+            <button type="reset">Restablecer</button>
+        </div>
     </form>
+
+    <script src="script.js"></script>
 </body>
 </html>

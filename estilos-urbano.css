@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;700&display=swap');
+body {
+    background-color: #121212;
+    color: #f5f5f5;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    background:url(/fotos/06660027f0f94e3909e0bdd9089cb993.jpg) ; 
+    background-size: cover;
+}
+
+
+header {
+    text-align: center;
+    padding: 40px;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    color: #ffcc00;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+fieldset {
+    border: 2px solid #ff2d55;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+legend {
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    
+    color: white;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-right: 10px;
+}
+
+button {
+    background: #ff2d55;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+button:hover {
+    background: #ffcc00;
+    color: black;
+    transform: scale(1.1);
+}
+
+.separator {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background: #ff2d55;
+    border-radius: 50%;
+}
+
+.radio-group, .checkbox-group {
+    display: flex;
+    gap: 10px;
+}
+
+.terms-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    margin-top: 20px;
+    text-align: left;
+}
+.terms-group label {
+    font-size: 1.1em;
+    color: #ffcc00;
+    text-shadow: 1px 1px 0px #000;
+    display: flex;
+    align-items: center;
+
+}
+
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    header {
+        font-size: 22px;
+        padding: 20px;
+    }
+
+    .radio-group, .checkbox-group {
+        flex-direction: column;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
